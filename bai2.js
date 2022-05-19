@@ -2,15 +2,14 @@ function baitap2() {
   var inputKW = +document.getElementById("inputKW").value;
   var inputName = document.getElementById("inputName").value;
 
-  hienthi(inputKW, inputName, total);
   var total = tinhTien(inputKW);
   if (inputKW === "" || inputName === "") {
-    document.getElementById("ketqua").style.display = "block";
-    document.getElementById("ketqua").innerHTML = "bạn chưa nhập số";
+    alert("Số kw không hợp lệ! Vui lòng nhập lại");
   } else {
     document.getElementById("ketqua").style.display = "block";
-    document.getElementById("ketqua").innerHTML =
-      "họ tên : " + inputName + "" + "   số tiền điện là : " + total;
+    document.getElementById(
+      "ketqua"
+    ).innerHTML = `họ tên :  ${inputName}  số tiền điện là :   ${total}`;
   }
 }
 

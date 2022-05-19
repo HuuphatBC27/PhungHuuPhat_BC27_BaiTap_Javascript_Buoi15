@@ -9,7 +9,7 @@ function baitap1() {
   var diemDoiTuong = tinhDiemDoiTuong(doiTuong);
   var tongDiem = diem1 + diem2 + diem3;
   var diemTongKet = tongDiem + diemDoiTuong + diemKhuVuc;
-  hienthi(diem1, diem2, diem3, diemTongKet, diemChuan);
+  hienra(diem1, diem2, diem3, diemTongKet, diemChuan);
 }
 
 function tinhDiemDoiTuong(doiTuong) {
@@ -38,16 +38,19 @@ function tinhDiemKhuVuc(khuVuc) {
   }
 }
 
-function hienthi(diem1, diem2, diem3, diemTongKet, diemChuan) {
-  if (!diem1 || !diem2 || !diem3) {
-    document.getElementById("result").style.display = "block";
-    document.getElementById("result").innerHTML = "Rớt vì có điểm 0";
+function hienra(diem1, diem2, diem3, diemTongKet, diemChuan) {
+  if (diem1 == "" || diem2 == "" || diem3 == "" || diemChuan == "") {
+    alert("bạn chưa nhập điểm");
+  } else if (!diem1 || !diem2 || !diem3) {
+    document.getElementById("tong").style.display = "block";
+    document.getElementById("tong").innerHTML = "Rớt vì có điểm 0";
   } else if (diemTongKet < diemChuan) {
-    document.getElementById("result").style.display = "block";
-    document.getElementById("result").innerHTML = "Rớt vì không đủ điểm chuẩn ";
+    document.getElementById("tong").style.display = "block";
+    document.getElementById("tong").innerHTML = "Rớt vì không đủ điểm chuẩn ";
   } else {
-    document.getElementById("result").style.display = "block";
-    document.getElementById("result").innerHTML =
-      "chúc mừng bạn đã đậu :  " + diemTongKet;
+    document.getElementById("tong").style.display = "block";
+    document.getElementById(
+      "tong"
+    ).innerHTML = `chúc mừng bạn đã đậu : ${diemTongKet}`;
   }
 }
