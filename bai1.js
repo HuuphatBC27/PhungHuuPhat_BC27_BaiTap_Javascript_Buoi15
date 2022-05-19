@@ -39,11 +39,10 @@ function tinhDiemKhuVuc(khuVuc) {
 }
 
 function hienra(diem1, diem2, diem3, diemTongKet, diemChuan) {
-  if (diem1 == "" || diem2 == "" || diem3 == "" || diemChuan == "") {
-    alert("bạn chưa nhập điểm");
-  } else if (!diem1 || !diem2 || !diem3) {
+  if (!diem1 || !diem2 || !diem3 || !diemChuan) {
     document.getElementById("tong").style.display = "block";
-    document.getElementById("tong").innerHTML = "Rớt vì có điểm 0";
+    document.getElementById("tong").innerHTML =
+      "Bạn đã rớt. Do có điểm nhỏ hơn hoặc bằng 0";
   } else if (diemTongKet < diemChuan) {
     document.getElementById("tong").style.display = "block";
     document.getElementById("tong").innerHTML = "Rớt vì không đủ điểm chuẩn ";
